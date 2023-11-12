@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>black_jack.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bcbec4;}
+.s1 { color: #bcbec4;}
+.s2 { color: #2aacb8;}
+.s3 { color: #cf8e6d;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+black_jack.py</font>
+</center></td></tr></table>
+<pre><span class="s0">koloda </span><span class="s1">= [</span><span class="s2">6</span><span class="s1">,</span><span class="s2">7</span><span class="s1">,</span><span class="s2">8</span><span class="s1">,</span><span class="s2">9</span><span class="s1">,</span><span class="s2">10</span><span class="s1">,</span><span class="s2">2</span><span class="s1">,</span><span class="s2">3</span><span class="s1">,</span><span class="s2">4</span><span class="s1">,</span><span class="s2">11</span><span class="s1">] * </span><span class="s2">4</span>
+
+<span class="s3">import </span><span class="s0">random</span>
+<span class="s0">random</span><span class="s1">.</span><span class="s0">shuffle</span><span class="s1">(</span><span class="s0">koloda</span><span class="s1">)</span>
+
+<span class="s0">print</span><span class="s1">(</span><span class="s4">'Поиграем в очко?'</span><span class="s1">)</span>
+<span class="s0">count </span><span class="s1">= </span><span class="s2">0</span>
+
+<span class="s3">while True</span><span class="s1">:</span>
+    <span class="s0">choice </span><span class="s1">= </span><span class="s0">input</span><span class="s1">(</span><span class="s4">'Будете брать карту? y/n</span><span class="s3">\n</span><span class="s4">'</span><span class="s1">)</span>
+    <span class="s3">if </span><span class="s0">choice </span><span class="s1">== </span><span class="s4">'y'</span><span class="s1">:</span>
+        <span class="s0">current </span><span class="s1">= </span><span class="s0">koloda</span><span class="s1">.</span><span class="s0">pop</span><span class="s1">()</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s4">'Вам попалась карта с достоинством %d' </span><span class="s1">%</span><span class="s0">current</span><span class="s1">)</span>
+        <span class="s0">count </span><span class="s1">+= </span><span class="s0">current</span>
+        <span class="s3">if </span><span class="s0">count </span><span class="s1">&gt; </span><span class="s2">21</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s4">'Извините, вы проиграли'</span><span class="s1">)</span>
+            <span class="s3">break</span>
+        <span class="s3">elif </span><span class="s0">count </span><span class="s1">== </span><span class="s2">21</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s4">'Поздравляю, вы набрали 21!'</span><span class="s1">)</span>
+            <span class="s3">break</span>
+        <span class="s3">else</span><span class="s1">:</span>
+            <span class="s0">print</span><span class="s1">(</span><span class="s4">'У вас %d очков.' </span><span class="s1">%</span><span class="s0">count</span><span class="s1">)</span>
+    <span class="s3">elif </span><span class="s0">choice </span><span class="s1">== </span><span class="s4">'n'</span><span class="s1">:</span>
+        <span class="s0">print</span><span class="s1">(</span><span class="s4">'У вас %d очков и вы закончили игру.' </span><span class="s1">%</span><span class="s0">count</span><span class="s1">)</span>
+<span class="s0">print</span><span class="s1">(</span><span class="s4">'До новых встреч!'</span><span class="s1">)</span></pre>
+</body>
+</html>
